@@ -12,6 +12,7 @@ public class Human {
 		
 	}
 	
+	// Ã¤ndring
 	public String getName(){
 		return this.humanName;
 	}
@@ -24,10 +25,10 @@ public class Human {
 		//check if human owns a dog or not
 		String s = "";
 			if (dog !=null){
-				s = getName()  + " äger hunden " + dog.getName();
+				s = getName()  + " ï¿½ger hunden " + dog.getName();
 				return s;
 			} 	else {
-					s = getName() + " äger ingen hund";
+					s = getName() + " ï¿½ger ingen hund";
 				}
 			return s;
 	
