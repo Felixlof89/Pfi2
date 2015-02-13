@@ -1,5 +1,5 @@
 package assignment4_lof_felix;
-
+//komment
 public class Dog {
 	public String dogName;
 	
