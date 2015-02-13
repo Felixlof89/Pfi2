@@ -16,7 +16,8 @@ public class Human {
 	public String getName(){
 		return this.humanName;
 	}
-
+	
+	// isaks ändinrgar på samma ställe
 	public void buyDog(Dog dogName){
 		this.dog = dogName;
 	}
