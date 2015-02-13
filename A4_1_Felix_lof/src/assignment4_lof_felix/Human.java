@@ -17,6 +17,7 @@ public class Human {
 		return this.humanName;
 	}
 
+	//jgkhjkhhkh
 	public void buyDog(Dog dogName){
 		this.dog = dogName;
 	}
