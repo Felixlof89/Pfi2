@@ -16,8 +16,9 @@ public class Human {
 	public String getName(){
 		return this.humanName;
 	}
-
+	
 	//jgkhjkhhkh
+
 	public void buyDog(Dog dogName){
 		this.dog = dogName;
 	}
