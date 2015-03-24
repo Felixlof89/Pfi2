@@ -1,0 +1,131 @@
+-----------------------------------------------------------------------
+|                              1: UML                                 |
+-----------------------------------------------------------------------
+
+
+
+
+
+
+----------------------------------------------------------------------
+|                            Journey                                  |
+----------------------------------------------------------------------
+- depDateTime: Calendar 
+- arrDateTime: Calendar 
+- noOfChanges: String 
+- lineOnFirstJourney: String 
+- travelMinutes: String 
+- timeToDeparture: String 
+- noOfZones: String 
+- lineTypeName: String 
+- depTimeDeviation: String 
+- arrTimeDeviation: String 
+- startStation: Station 
+- endStation: Station 
+
+---
++ Journey(startStation: Station, endStation: Station)                
+---
+
++ getDepDateTime(): Calendar
++ setDepDateTime(depDateTime : Calendar): Void
++ getArrDateTime(): Calendar
++ setArrDateTime(arrTime: Calendar): Void
++ getNoOfChanges(): String
++ setNoOfChanges(number : String): Void
++ getStartStation(): Station
++ getEndStation(): Station
++ setLineOnFirstJourney(lineOnFirstJourney): void
++ setTravelTime(travelTime: String): String
++ getTravelMinutes(): String
++ getTimeToDeparture(): String
++ setTimeToDeparture(timeToDeparture: String) :Void
++ getNoOfZones(): String
++ setNoOfZones(noOfZones: String): Void
++ getLineTypeName(): String
++ setLineTypeName(lineTypeName: String): Void
++ getDepTimeDeviation(): String
++ setDepTimeDeviation(depTimeDeviation: String): Void
++ getArrTimeDeviation(): String
++ setArrTimeDeviation(arrTimeDeviation: String): Void
++ setStartStation(startStation: String): Void
++ setEndStation(endStation: String): Void
+
+-----------------------------------------------------------------------
+|                              Journeys                                |
+-----------------------------------------------------------------------
+- journeys: ArrayList(Journey)
+---
+
++ Journeys():
++ addJourney( journey Journey)
++ getJourneys: ArrayList(Journey)
++ clearJourneys: void
+
+---
+- journeys: ArrayList(Journey)
+---
+
++ Journeys():
++ addJourney( journey Journey)
++ getJourneys: ArrayList(Journey)
++ clearJourneys: void
+
+
+-----------------------------------------------------------------------
+|                              Station                                 |
+-----------------------------------------------------------------------
+- stationNbr:  String
+- stationName:  String
+- latitude:  double
+- longitude: double
+---
+
++ Station(stationName: String, stationNbr:String)
++ Station(stationName: String, stationNbr:String, latitude:String, logitude:String)
++ getLatitude(): double
++ setLatitude(latitude: double): void
++ getLongitude():double
++ setLongitude(longitude: double) : void
++ getStationNbr() : String
++ getStationName() : String
++ toString() : String
++ equals(o:object) : boolean
++ hashCode() : int
++ compareTo(another: Station) : int
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------
+|                              2: XML                                 |
+-----------------------------------------------------------------------
+
+1. Mellan vilka stationer sker sökningen?
+
+	Malmö - Lund
+
+
+2. Hur ser en QueryString ut om man bara vill ha 5 resultatet för sökningen?
+	http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=3|80000|0&selPointTo=4|81216|0=5
+
+
+3. Vilka delar av resan beskriver dessa taggar?
+
+	<Journeys> </Journeys>  	Beskriver alla möjliga resvägar.
+	<Journey> </Journey> 		Beskriver en specifik resa.
+	<RouteLinks> </RouteLinks>  är en container för routelinks.
+	<RouteLink></RouteLink> 	Beskriver om resan är i tid, när den avgör / 
+								kommer fram, vilken typ av fordon, priszoner.
+
+
+4. Vilken XML-tagg innehåller antal byte för en resa och under vilken huvudtagg är den taggen placerad?
+	<NoofChanges> </NoofChanges>, <Journey> är huvudklassen
+
+
+5. Ge exempel på en XML tagg som inte finns implementerad i det API du laddade ner.
+	<DepWalkDist> </DepWalkDist>
